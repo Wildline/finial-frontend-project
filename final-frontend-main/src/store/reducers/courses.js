@@ -1,7 +1,7 @@
 import * as at from "../actions/actionTypes";
 
 // REDUCER;
-const allCourses = (state=[], action) => {
+const allTasks = (state=[], action) => {
   switch (action.type) {
     case at.FETCH_ALL_COURSES:
       return action.payload;
@@ -20,4 +20,4 @@ const allCourses = (state=[], action) => {
   }
 };
 
-export default allCourses;
+export default allTasks;

@@ -22,21 +22,21 @@ export const fetchInstructor = (instructor) => {
 };
 
 //All courses
-export const fetchAllCourses = (courses) => {
+export const fetchAllTasks = (courses) => {
   return {
     type: at.FETCH_ALL_COURSES,
     payload: courses,
   };
 };
 
-export const addCourse = (course) => {
+export const addTask = (course) => {
   return {
     type: at.ADD_COURSE,
     payload: course,
   };
 };
 
-export const deleteCourse = (courseId) => {
+export const deleteTask = (courseId) => {
   return {
     type: at.DELETE_COURSE,
     payload: courseId,
@@ -44,7 +44,7 @@ export const deleteCourse = (courseId) => {
 };
 
 
-export const editCourse = (course) => {
+export const editTask = (course) => {
   return {
     type: at.EDIT_COURSE,
     payload: course,
@@ -52,7 +52,7 @@ export const editCourse = (course) => {
 };
 
 //Single course
-export const fetchCourse = (course) => {
+export const fetchTask = (course) => {
   return {
     type: at.FETCH_COURSE,
     payload: course,

@@ -40,7 +40,7 @@ class NewCourseContainer extends Component {
             instructorId: this.state.instructorId
         };
         
-        let newCourse = await this.props.addCourse(course);
+        let newCourse = await this.props.addTask(course);
 
         this.setState({
           redirect: true, 
@@ -70,7 +70,7 @@ class NewCourseContainer extends Component {
 
 const mapDispatch = (dispatch) => {
     return({
-        addCourse: (course) => dispatch(addTaskThunk(course)),
+        addTask: (course) => dispatch(addTaskThunk(course)),
     })
 }
 

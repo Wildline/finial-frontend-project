@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const AllCoursesView = (props) => {
-  let {courses, deleteCourse} = props;
+  let {courses, deleteTask} = props;
   //courses = [{id: 300, title: "hello"}]
   if (!courses.length) {
     return (
@@ -23,7 +23,7 @@ const AllCoursesView = (props) => {
           <Link to={`/course/${course.id}`}>
             <h1>{title}</h1>
           </Link>
-          <button onClick={() => deleteCourse(course.id)}>Delete</button>
+          <button onClick={() => deleteTask(course.id)}>Delete</button>
           </div>
         );
       }

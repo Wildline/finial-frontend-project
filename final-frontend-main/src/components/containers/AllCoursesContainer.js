@@ -11,14 +11,14 @@ import AllCoursesView from '../views/AllCoursesView';
 
 class AllCoursesContainer extends Component {
     componentDidMount() {
-      this.props.fetchAllCourses();
+      this.props.fetchAllTasks();
     }
     render(){
         return(
             <div>
                 <AllCoursesView 
-                  courses={this.props.allCourses}
-                  deleteCourse={this.props.deleteCourse}   
+                  courses={this.props.allTasks}
+                  deleteTask={this.props.deleteTask}   
                 />
             </div>
         )
@@ -28,15 +28,15 @@ class AllCoursesContainer extends Component {
 // Map state to props;
 const mapState = (state) => {
   return {
-    allCourses: state.allCourses,
+    allTasks: state.allTasks,
   };
 };
 
 // Map dispatch to props;
 const mapDispatch = (dispatch) => {
   return {
-    fetchAllCourses: () => dispatch(fetchAllTasksThunk()),
-    deleteCourse: (courseId) => dispatch(deleteTasksThunk(courseId)),
+    fetchAllTasks: () => dispatch(fetchAllTasksThunk()),
+    deleteTask: (courseId) => dispatch(deleteTasksThunk(courseId)),
   };
 };
 

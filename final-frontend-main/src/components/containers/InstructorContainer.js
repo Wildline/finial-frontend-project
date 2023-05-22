@@ -12,15 +12,15 @@ class InstructorContainer extends Component {
   componentDidMount() {
     //getting instructor ID from url
     this.props.fetchInstructor(this.props.match.params.id);
-    this.props.fetchCourses();
+    this.props.fetchTasks();
   }
 
   render() {
     return (
       <InstructorView 
         instructor={this.props.instructor}
-        editCourse={this.props.editCourse}
-        allCourses={this.props.allCourses}
+        editTask={this.props.editTask}
+        allTasks={this.props.allTasks}
       />
     );
   }
@@ -39,8 +39,8 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchInstructor: (id) => dispatch(fetchEmployeeThunk(id)),
-    editCourse: (course) => dispatch(editTaskThunk(course)),
-    fetchCourses: () => dispatch(fetchAllTasksThunk()),
+    editTask: (course) => dispatch(editTaskThunk(course)),
+    fetchTasks: () => dispatch(fetchAllTasksThunk()),
 
   };
 };

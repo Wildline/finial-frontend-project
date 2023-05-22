@@ -53,7 +53,7 @@ class EditCourseContainer extends Component {
 
     componentDidMount() {
         //getting course ID from url
-        this.props.fetchCourse(this.props.match.params.id);
+        this.props.fetchTask(this.props.match.params.id);
         this.props.fetchInstructors();
         this.setState({
             title: this.props.course.title, 
@@ -97,7 +97,7 @@ class EditCourseContainer extends Component {
             instructorId: this.state.instructorId
         };
         
-        this.props.editCourse(course);
+        this.props.editTask(course);
 
         this.setState({
           redirect: true, 
@@ -112,7 +112,7 @@ class EditCourseContainer extends Component {
     }
 
     render() {
-        let { course, allInstructors, editCourse, fetchCourse} = this.props;
+        let { course, allInstructors, editTask, fetchTask} = this.props;
         let assignedInstructor = course.instructorId;
 
         let otherInstructors = allInstructors.filter(instructor => instructor.id!==assignedInstructor);
@@ -156,7 +156,7 @@ class EditCourseContainer extends Component {
           {course.instructorId !== null ?
             <div> Current instructor:  
             <Link to={`/instructor/${course.instructorId}`}>{course.instructor.firstname}</Link>
-            <button onClick={async () => {await editCourse({id:course.id, instructorId: null});  fetchCourse(course.id)}}>Unassign</button>
+            <button onClick={async () => {await editTask({id:course.id, instructorId: null});  fetchTask(course.id)}}>Unassign</button>
             </div>
             : <div> No instructor currently assigned </div>
           }
@@ -168,7 +168,7 @@ class EditCourseContainer extends Component {
                 <Link to={`/instructor/${instructor.id}`}>
                   <h4>{instructor.firstname}</h4>
                 </Link>
-                <button onClick={async() => {await editCourse({id:course.id, instructorId: instructor.id}); fetchCourse(course.id)}}>Assign this instructor</button>
+                <button onClick={async() => {await editTask({id:course.id, instructorId: instructor.id}); fetchTask(course.id)}}>Assign this instructor</button>
             </div>
             )})
           }
@@ -188,8 +188,8 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
     return({
-        editCourse: (course) => dispatch(editTaskThunk(course)),
-        fetchCourse: (id) => dispatch(fetchTaskThunk(id)),
+        editTask: (course) => dispatch(editTaskThunk(course)),
+        fetchTask: (id) => dispatch(fetchTaskThunk(id)),
         fetchInstructors: () => dispatch(fetchAllEmployeesThunk()),
 
     })

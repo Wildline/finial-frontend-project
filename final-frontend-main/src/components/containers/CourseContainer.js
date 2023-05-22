@@ -6,7 +6,7 @@ import { CourseView } from "../views";
 class CourseContainer extends Component {
   componentDidMount() {
     //getting course ID from url
-    this.props.fetchCourse(this.props.match.params.id);
+    this.props.fetchTask(this.props.match.params.id);
   }
 
   render() {
@@ -28,7 +28,7 @@ const mapState = (state) => {
 // map dispatch to props
 const mapDispatch = (dispatch) => {
   return {
-    fetchCourse: (id) => dispatch(fetchTaskThunk(id)),
+    fetchTask: (id) => dispatch(fetchTaskThunk(id)),
   };
 };
 
