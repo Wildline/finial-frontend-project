@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
-import { fetchCourseThunk, editCourseThunk, fetchAllInstructorsThunk  } from '../../store/thunks';
+import { fetchTaskThunk, editTaskThunk, fetchAllEmployeesThunk  } from '../../store/thunks';
 
 
 /*
@@ -188,9 +188,9 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
     return({
-        editCourse: (course) => dispatch(editCourseThunk(course)),
-        fetchCourse: (id) => dispatch(fetchCourseThunk(id)),
-        fetchInstructors: () => dispatch(fetchAllInstructorsThunk()),
+        editCourse: (course) => dispatch(editTaskThunk(course)),
+        fetchCourse: (id) => dispatch(fetchTaskThunk(id)),
+        fetchInstructors: () => dispatch(fetchAllEmployeesThunk()),
 
     })
 }

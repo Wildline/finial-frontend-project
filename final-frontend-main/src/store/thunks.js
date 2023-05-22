@@ -7,17 +7,17 @@ let path = "http://localhost:5001/api";
 // THUNKS
 
 //All instructors
-export const fetchAllInstructorsThunk = () => async (dispatch) => {
+export const fetchAllEmployeesThunk = () => async (dispatch) => {
   try {
     let res = await axios.get(`${path}/instructors`);
-    dispatch(ac.fetchAllInstructors(res.data));
+    dispatch(ac.fetchAllEmployees(res.data));
   } catch(err) {
     console.error(err);
   }
 };
 
 //Single instructor
-export const fetchInstructorThunk = (id) => async (dispatch) => {
+export const fetchEmployeeThunk = (id) => async (dispatch) => {
   // thunk creator would not an be async function 
   // if using Promise.then:
   // return axios
@@ -33,8 +33,8 @@ export const fetchInstructorThunk = (id) => async (dispatch) => {
   }
 };
 
-//All courses
-export const fetchAllCoursesThunk = () => async (dispatch) => {
+//All Tasks
+export const fetchAllTasksThunk = () => async (dispatch) => {
   try {
     let res = await axios.get(`${path}/courses`);
     dispatch(ac.fetchAllCourses(res.data));
@@ -43,7 +43,7 @@ export const fetchAllCoursesThunk = () => async (dispatch) => {
   }
 };
 
-export const addCourseThunk = (course) => async (dispatch) => {
+export const addTaskThunk = (course) => async (dispatch) => {
   // course = { title: "CSCI 127" }
   try {
     let res = await axios.post(`${path}/courses`, course);
@@ -54,7 +54,7 @@ export const addCourseThunk = (course) => async (dispatch) => {
   }
 };
 
-export const deleteCourseThunk = courseId => async dispatch => {
+export const deleteTasksThunk = courseId => async dispatch => {
   try {
     await axios.delete(`${path}/courses/${courseId}`);
     //delete succesful so change state with dispatch
@@ -64,7 +64,7 @@ export const deleteCourseThunk = courseId => async dispatch => {
   }
 };
 
-export const editCourseThunk = course => async dispatch => {
+export const editTaskThunk = course => async dispatch => {
   try {
     let res = await axios.put(`${path}/courses/${course.id}`, course);
     //res.data is the updated course object
@@ -75,7 +75,7 @@ export const editCourseThunk = course => async dispatch => {
 };
 
 //Single course
-export const fetchCourseThunk = id => async dispatch => {
+export const fetchTaskThunk = id => async dispatch => {
   try {
     let res = await axios.get(`${path}/courses/${id}`);
     dispatch(ac.fetchCourse(res.data));

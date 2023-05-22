@@ -6,7 +6,7 @@ import * as at from './actionTypes';
  */
 
 // All instructors
-export const fetchAllInstructors = (instructors) => {
+export const fetchAllEmployees = (instructors) => {
   return {
     type: at.FETCH_ALL_INSTRUCTORS,
     payload: instructors,
