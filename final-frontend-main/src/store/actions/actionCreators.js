@@ -21,40 +21,40 @@ export const fetchInstructor = (instructor) => {
   };
 };
 
-//All courses
-export const fetchAllTasks = (courses) => {
+//All tasks
+export const fetchAllTasks = (tasks) => {
   return {
-    type: at.FETCH_ALL_COURSES,
-    payload: courses,
+    type: at.FETCH_ALL_TASKS,
+    payload: tasks,
   };
 };
 
-export const addTask = (course) => {
+export const addTask = (task) => {
   return {
-    type: at.ADD_COURSE,
-    payload: course,
+    type: at.ADD_TASK,
+    payload: task,
   };
 };
 
-export const deleteTask = (courseId) => {
+export const deleteTask = (taskId) => {
   return {
-    type: at.DELETE_COURSE,
-    payload: courseId,
+    type: at.DELETE_TASK,
+    payload: taskId,
   };
 };
 
 
-export const editTask = (course) => {
+export const editTask = (task) => {
   return {
-    type: at.EDIT_COURSE,
-    payload: course,
+    type: at.EDIT_TASK,
+    payload: task,
   };
 };
 
 //Single course
-export const fetchTask = (course) => {
+export const fetchTask = (task) => {
   return {
-    type: at.FETCH_COURSE,
-    payload: course,
+    type: at.FETCH_TASK,
+    payload: task,
   };
 };

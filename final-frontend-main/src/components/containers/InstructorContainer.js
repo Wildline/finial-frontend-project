@@ -30,7 +30,7 @@ class InstructorContainer extends Component {
 const mapState = (state) => {
   return {
     instructor: state.instructor,
-    allCourses: state.allCourses,
+    allTasks: state.allTasks,
 
   };
 };
@@ -39,7 +39,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchInstructor: (id) => dispatch(fetchEmployeeThunk(id)),
-    editTask: (course) => dispatch(editTaskThunk(course)),
+    editTask: (task) => dispatch(editTaskThunk(task)),
     fetchTasks: () => dispatch(fetchAllTasksThunk()),
 
   };

@@ -1,7 +1,7 @@
 import { FETCH_INSTRUCTOR } from "../actions/actionTypes";
 
 const initialState = {
-  courses: [],
+  tasks: [],
 };
 
 const instructor = (state = initialState, action) => {
