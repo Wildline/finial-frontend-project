@@ -13,7 +13,7 @@ class NewTaskContainer extends Component {
           title: "", 
           timeslot: "",
           location: "", 
-          instructorId: null, 
+          employeeId: null, 
           redirect: false, 
           redirectId: null,
           error: ""
@@ -37,7 +37,7 @@ class NewTaskContainer extends Component {
             title: this.state.title,
             timeslot: this.state.timeslot,
             location: this.state.location,
-            instructorId: this.state.instructorId
+            employeeId: this.state.employeeId
         };
         
         let newTask = await this.props.addTask(task);

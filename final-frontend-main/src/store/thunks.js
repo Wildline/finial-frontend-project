@@ -9,7 +9,7 @@ let path = "http://localhost:5001/api";
 //All instructors
 export const fetchAllEmployeesThunk = () => async (dispatch) => {
   try {
-    let res = await axios.get(`${path}/instructors`);
+    let res = await axios.get(`${path}/employees`);
     dispatch(ac.fetchAllEmployees(res.data));
   } catch(err) {
     console.error(err);
@@ -26,8 +26,8 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
   //   .then((instructor) => dispatch(ac.fetchInstructor(instructor)))
   //   .catch((err) => console.log(err));
   try {
-    let res = await axios.get(`${path}/instructors/${id}`);
-    dispatch(ac.fetchInstructor(res.data));
+    let res = await axios.get(`${path}/employees/${id}`);
+    dispatch(ac.fetchEmployee(res.data));
   } catch(err) {
     console.error(err);
   }
