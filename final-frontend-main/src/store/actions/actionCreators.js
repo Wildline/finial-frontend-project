@@ -13,13 +13,24 @@ export const fetchAllEmployees = (employees) => {
   };
 };
 
-//Single instructor
+//EMPLOYEES
 export const fetchEmployee = (employee) => {
   return {
     type: at.FETCH_EMPLOYEE,
     payload: employee,
   };
 };
+
+
+
+export const deleteEmployee = (employeeId) => {
+  return {
+    type: at.DELETE_EMPLOYEE,
+    payload: employeeId,
+  };
+};
+
+
 
 //All tasks
 export const fetchAllTasks = (tasks) => {

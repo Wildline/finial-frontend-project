@@ -1,7 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { fetchAllEmployeesThunk } from "../../store/thunks";
 import { AllEmployeesView } from "../views";
+
+import { 
+  deleteEmployeesThunk
+} from '../../store/thunks';
 
 function AllEmployeesContainer() {
   const allEmployees = useSelector((state) => state.allEmployees);
@@ -15,4 +19,19 @@ function AllEmployeesContainer() {
   return <AllEmployeesView allEmployees={allEmployees} />;
 }
 
-export default AllEmployeesContainer;
+
+// Map state to props;
+const mapState = (state) => {
+  return {
+    allEmployees: state.allEmployees,
+  };
+};
+// Map dispatch to props;
+const mapDispatch = (dispatch) => {
+  return {
+    fetchAllEmployees: () => dispatch(fetchAllEmployeesThunk()),
+    deleteEmployee: (employeeId) => dispatch(deleteEmployeesThunk(employeeId)),
+  };
+};
+
+export default connect(mapDispatch, mapState) (AllEmployeesContainer);

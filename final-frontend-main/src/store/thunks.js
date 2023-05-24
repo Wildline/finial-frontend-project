@@ -6,7 +6,7 @@ let path = "http://localhost:5001/api";
 
 // THUNKS
 
-//All instructors
+//All employees
 export const fetchAllEmployeesThunk = () => async (dispatch) => {
   try {
     let res = await axios.get(`${path}/employees`);
@@ -16,7 +16,7 @@ export const fetchAllEmployeesThunk = () => async (dispatch) => {
   }
 };
 
-//Single instructor
+//Single employees
 export const fetchEmployeeThunk = (id) => async (dispatch) => {
   // thunk creator would not an be async function 
   // if using Promise.then:
@@ -32,6 +32,21 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
     console.error(err);
   }
 };
+
+
+
+export const deleteEmployeesThunk = employeeId => async dispatch => {
+  try {
+    await axios.delete(`${path}/employees/${employeeId}`);
+    //delete succesful so change state with dispatch
+    dispatch(ac.deleteEmployee(employeeId));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+
+
 
 //All Tasks
 // did: editTask, deleteTask, fetchTask(s), addTask

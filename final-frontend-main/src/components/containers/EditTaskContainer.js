@@ -89,7 +89,7 @@ class EditTaskContainer extends Component {
           return;
         }
 
-        //get new info for course from form input
+        //get new info for task from form input
         let task = {
             id: this.props.task.id,
             description: this.state.description,
