@@ -20,8 +20,14 @@ const AllEmployeesView = (props) => {
           </Link>
           <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
           <p>{employee.department}</p>
+          <br/>
+          <Link to={`/newemployee`}>
+        <button>Add New Employees</button>
+      </Link>
         </div>
         );
+
+
       })}
 
     </div>
