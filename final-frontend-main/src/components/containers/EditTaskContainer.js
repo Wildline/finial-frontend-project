@@ -56,7 +56,7 @@ class EditTaskContainer extends Component {
         this.props.fetchTask(this.props.match.params.id);
         this.props.fetchEmployees();
         this.setState({
-            description: this.props.description.description, 
+            description: this.props.task.description, 
             priority: this.props.task.priority,
             employeeId: this.props.task.employeeId, 
         });

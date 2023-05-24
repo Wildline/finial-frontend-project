@@ -34,7 +34,7 @@ export const fetchEmployeeThunk = (id) => async (dispatch) => {
 };
 
 
-
+//All the thing you can do with the employees
 export const deleteEmployeesThunk = employeeId => async dispatch => {
   try {
     await axios.delete(`${path}/employees/${employeeId}`);
@@ -44,6 +44,29 @@ export const deleteEmployeesThunk = employeeId => async dispatch => {
     console.error(err);
   }
 };
+
+
+export const editEmployeeThunk = employee => async dispatch => {
+  try {
+    let res = await axios.put(`${path}/employees/${employee.id}`, employee);
+    //res.data is the updated course object
+    dispatch(ac.editEmployee(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+export const addEmployeeThunk = (employee) => async (dispatch) => {
+  // course = { title: "CSCI 127" }
+  try {
+    let res = await axios.post(`${path}/employees`, employee);
+    dispatch(ac.addEmployee(res.data));
+    return res.data;
+  } catch(err) {
+    console.error(err);
+  }
+};
+
 
 
 
