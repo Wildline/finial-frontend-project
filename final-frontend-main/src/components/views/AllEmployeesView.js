@@ -4,6 +4,7 @@ import { deleteEmployee } from "../../store/actions/actionCreators";
 import { employee } from "../../store/reducers";
 
 const AllEmployeesView = (props) => {
+  let{employees, deleteEmployee} = props;
   
   if (!props.allEmployees.length) {
     return <div>There are no employees.</div>;
@@ -18,8 +19,9 @@ const AllEmployeesView = (props) => {
           <Link to={`/employee/${employee.id}`}>
             <h1>{name}</h1>
           </Link>
-          <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
           <p>{employee.department}</p>
+          <br/>
+          <button onClick={() => deleteEmployee(employee.id)}>X</button>
           <br/>
           <Link to={`/newemployee`}>
         <button>Add New Employees</button>

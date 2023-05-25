@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
+import { employee } from '../../store/reducers';
 
 import { fetchEmployeeThunk, editEmployeeThunk, fetchAllEmployeesThunk  } from '../../store/thunks';
 
@@ -75,7 +76,7 @@ class EditEmployeeContainer extends Component {
       //want to set the instructorId based on the selected choice
       //when the form gets submitted, this is how we can change
       //assigned instructor without having to manually enter in the 
-      //instructorId like before
+      //employeeId like before
       if (event.target.value === "staff") {
         this.setState({employeeId:null});
       } else {
@@ -92,15 +93,15 @@ class EditEmployeeContainer extends Component {
         }
 
         //get new info for task from form input
-        let task = {
+        let employee = {
             id: this.props.task.id,
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             department: this.state.department,
-            employeeId: this.state.employeeId
+            //employeeId: this.state.employeeId
         };
         
-        this.props.editEmployee(task);
+        this.props.editEmployee(employee);
 
         this.setState({
           redirect: true, 

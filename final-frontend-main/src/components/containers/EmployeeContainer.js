@@ -21,6 +21,7 @@ class EmployeeContainer extends Component {
         employee={this.props.employee}
         editTask={this.props.editTask}
         allTasks={this.props.allTasks}
+        editEmployee={this.props.editEmployee}
       />
     );
   }

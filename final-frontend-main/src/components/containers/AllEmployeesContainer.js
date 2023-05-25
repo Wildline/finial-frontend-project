@@ -7,6 +7,8 @@ import {
   deleteEmployeesThunk
 } from '../../store/thunks';
 
+
+
 function AllEmployeesContainer() {
   const allEmployees = useSelector((state) => state.allEmployees);
   const dispatch = useDispatch();
@@ -16,8 +18,29 @@ function AllEmployeesContainer() {
     dispatch(fetchAllEmployeesThunk());
   }, [dispatch]);
 
-  return <AllEmployeesView allEmployees={allEmployees} />;
+  return <AllEmployeesView 
+             allEmployees={allEmployees}
+             //deleteEmployee={this.props.deleteEmployee}   
+             />;
 }
+
+/*
+class AllEmployeesContainer extends Component {
+  componentDidMount() {
+    this.props.fetchAllEmployees();
+  }
+  render(){
+      return(
+          <div>
+              <AllEmployeesView 
+                employees={this.props.allEmployees}
+                deleteEmployee={this.props.deleteEmployee}   
+              />
+          </div>
+      )
+  }
+}
+*/
 
 
 // Map state to props;

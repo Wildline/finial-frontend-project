@@ -57,7 +57,7 @@ export const editEmployeeThunk = employee => async dispatch => {
 };
 
 export const addEmployeeThunk = (employee) => async (dispatch) => {
-  // course = { title: "CSCI 127" }
+  // course = { task: "CSCI 127" }
   try {
     let res = await axios.post(`${path}/employees`, employee);
     dispatch(ac.addEmployee(res.data));
