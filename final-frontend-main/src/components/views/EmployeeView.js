@@ -35,6 +35,17 @@ const EmployeeView = (props) => {
         })}</div>
 
       </div>
+     
+    <div>
+      <h1>{employee.title}</h1>
+      {employee ? <h3>{employee.firstname + " " + employee.lastname}</h3>: <h3>staff</h3>}
+      
+    
+      <Link to={`/editemployee/${employee.id}`}>Edit employee information</Link>
+
+    </div>
+ 
+      
 
   
     </div>

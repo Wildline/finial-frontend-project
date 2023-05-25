@@ -8,5 +8,5 @@ export { default as NewTaskContainer } from "./NewTaskContainer";
 export { default as EditTaskContainer } from "./EditTaskContainer";
 
 export { default as NewEmployeeContainer } from "./NewEmployeeContainer";
-//export { default as EditEmployeeContainer } from "./EditEmployeeContainer";
+export { default as EditEmployeeContainer } from "./EditEmployeeContainer";
 
